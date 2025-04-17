@@ -8,7 +8,9 @@ fetch('http://localhost:3000/usuario')
     carregarDados.forEach(valor => {
         const tr = document.createElement('tr')
     
-        Object.values(valor).forEach(valor =>{
+        Object.entries(valor).forEach(([campo, valor]) =>{
+            if (campo === 'id')
+                return;
             const td = document.createElement('td')
             td.textContent = valor;
             tr.appendChild(td)
